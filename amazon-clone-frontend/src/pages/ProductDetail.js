@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import API from "../services/api";
 
 function ProductDetail() {
-  const { id } = useParams();          // product id from URL
+  const { id } = useParams();          
   const navigate = useNavigate();
 
   const [product, setProduct] = useState(null);
@@ -37,7 +37,6 @@ function ProductDetail() {
 
   return (
     <div style={styles.page}>
-      {/* LEFT SIDE – IMAGE CAROUSEL */}
       <div style={styles.left}>
         <img
           src={images[activeImage]}
@@ -64,7 +63,6 @@ function ProductDetail() {
         </div>
       </div>
 
-      {/* RIGHT SIDE – DETAILS */}
       <div style={styles.right}>
         <h2>{product.name}</h2>
 
