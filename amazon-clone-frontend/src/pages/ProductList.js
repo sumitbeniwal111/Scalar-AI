@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";   // ✅ NEW
+import { useNavigate } from "react-router-dom";   
 import API from "../services/api";
 
 function ProductList({ search, category }) {
   const [products, setProducts] = useState([]);
-  const navigate = useNavigate();                // ✅ NEW
+  const navigate = useNavigate();                
 
   useEffect(() => {
     API.get("/products", {
@@ -18,7 +18,7 @@ function ProductList({ search, category }) {
   }, [search, category]);
 
   const addToCart = (e, productId) => {
-    e.stopPropagation(); // ✅ IMPORTANT (prevents navigation)
+    e.stopPropagation(); 
     API.post("/cart/add", {
       product_id: productId,
       quantity: 1,
@@ -35,7 +35,7 @@ function ProductList({ search, category }) {
         <div
           key={product.id}
           style={styles.card}
-          onClick={() => navigate(`/product/${product.id}`)} // ✅ CLICK CARD
+          onClick={() => navigate(`/product/${product.id}`)} 
         >
           <img
             src={product.image_urls?.[0]}
@@ -47,7 +47,7 @@ function ProductList({ search, category }) {
 
           <button
             style={styles.button}
-            onClick={(e) => addToCart(e, product.id)} // ✅ FIXED
+            onClick={(e) => addToCart(e, product.id)} 
           >
             Add to Cart
           </button>
@@ -68,7 +68,7 @@ const styles = {
     border: "1px solid #ddd",
     padding: "15px",
     backgroundColor: "white",
-    cursor: "pointer", // ✅ UX improvement
+    cursor: "pointer", 
   },
   image: {
     width: "100%",
