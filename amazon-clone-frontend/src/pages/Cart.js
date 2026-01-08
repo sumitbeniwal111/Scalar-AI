@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 function Cart() {
   const navigate = useNavigate();
 
-  // ✅ FIX: use `total` instead of `total_amount`
+  
   const [cart, setCart] = useState({ items: [], total: 0 });
 
   const fetchCart = () => {
     API.get("/cart")
       .then((res) => {
-        setCart(res.data); // res.data has { items, total }
+        setCart(res.data); 
       })
       .catch((err) => console.log(err));
   };
@@ -37,7 +37,6 @@ function Cart() {
       .catch((err) => console.log(err));
   };
 
-  // ✅ FIX: calculate total quantity
   const totalItems = cart.items.reduce(
     (sum, item) => sum + item.quantity,
     0
@@ -77,7 +76,6 @@ function Cart() {
         <h3>Order Summary</h3>
         <p>Total Items: {totalItems}</p>
 
-        {/* ✅ FIX: use cart.total */}
         <h2>Total: ₹{cart.total}</h2>
 
         <button
