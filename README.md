@@ -5,6 +5,21 @@ It replicates core Amazon functionalities such as product browsing, cart managem
 
 ---
 
+##  Live Deployment
+
+The Amazon Clone application is deployed and accessible online:
+
+###  Frontend (Vercel)
+🔗 https://scalar-ai-kappa.vercel.app/
+
+###  Backend (Render – FastAPI)
+🔗 https://scalar-ai.onrender.com
+
+###  API Documentation (Swagger)
+🔗 https://scalar-ai.onrender.com/docs
+
+---
+
 ## Tech Stack Used
 
 ### Frontend
